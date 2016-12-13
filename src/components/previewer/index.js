@@ -1,10 +1,12 @@
 'use strict';
 
 import React from 'react';
+import marked from 'marked';
 
 const Previewer = (props) => {
+  let md = marked(props.text);
   return (
-    <div>Previewer!</div>
+    <div dangerouslySetInnerHTML={{__html: md}} />
   );
 }
 
