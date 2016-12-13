@@ -3,8 +3,18 @@
 import React from 'react';
 
 const Editor = (props) => {
+
+  function onTextareaChange(event) {
+    props.setTextValue(event.target.value);
+  }
+
   return (
-    <div>Editor!</div>
+    <div>
+      <textarea rows='10' cols='30'
+        onChange={onTextareaChange}
+        defaultValue={props.defaultValue}>
+      </textarea>
+    </div>
   );
 }
 
