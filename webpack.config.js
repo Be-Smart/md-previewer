@@ -3,6 +3,7 @@
 const env = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   context: __dirname + '/src',
@@ -33,13 +34,20 @@ module.exports = {
     },
     {
       test: /\.sass$/,
-      loader: ExtractTextPlugin.extract('style', 'css-loader!resolve-url!sass-loader?sourceMap')
+      loader: ExtractTextPlugin.extract(
+        'style',
+        'css-loader!resolve-url!postcss-loader!sass-loader?sourceMap'
+      )
     },
     {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract('style', 'css-loader')
     }]
   },
+
+  postcss: [
+    autoprefixer({ browsers: ['last 15 versions', '> 1%'] })
+  ],
 
   plugins: [
     new ExtractTextPlugin('[name].css', {allChunks: true, disable: env}),
