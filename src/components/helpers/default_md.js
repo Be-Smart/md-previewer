@@ -19,13 +19,29 @@ line break
 Text attributes *italic*, **bold**,
 \`monospace\`, ~~strikethrough~~ .
 
-Piece of code:
+JavaScript:
 
 \`\`\`javascript
   function sum (a, b) {
     return a + b;
   }
 \`\`\`
+
+HTML:
+
+\`\`\`html
+  <body class="app">
+    <h1>Hey There!</h1>
+  </body>
+\`\`\`
+
+Table:
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 Shopping list:
 
