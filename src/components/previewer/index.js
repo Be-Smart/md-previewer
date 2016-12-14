@@ -1,12 +1,19 @@
 'use strict';
 
 import React from 'react';
-import marked from 'marked';
+import marked, {Renderer} from 'marked';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atom-one-light.css'
 
 const Previewer = (props) => {
-  let md = marked(props.text);
+  marked.setOptions({
+    highlight: function(code) {
+      return hljs.highlightAuto(code).value;
+    }
+  });
+
   return (
-    <div dangerouslySetInnerHTML={{__html: md}} />
+    <div dangerouslySetInnerHTML={{__html: marked(props.text)}} />
   );
 }
 
