@@ -4,47 +4,13 @@ import React from 'react';
 
 import Editor from './md_editor';
 import Previewer from './previewer';
+import md from './helpers/default_md';
 
 export default class App extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {
-      val: `
-Heading
-=======
-
-Sub-heading
------------
-
-### Another deeper heading
-
-Paragraphs are separated
-by a blank line.
-
-Leave 2 spaces at the end of a line to do a
-line break
-
-Text attributes *italic*, **bold**,
-\`monospace\`, ~~strikethrough~~ .
-
-Shopping list:
-
-  * apples
-  * oranges
-  * pears
-
-Numbered list:
-
-  1. apples
-  2. oranges
-  3. pears
-
-The rain---not the reign---in
-Spain.
-
- *[Serhii Vladymyrov](https://vladymyrov.com/)*`
-    };
+    this.state = { val: md() };
   }
 
   setTextValue (string) {
