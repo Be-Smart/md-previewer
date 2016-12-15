@@ -20,7 +20,7 @@ const Previewer = (props) => {
   marked.setOptions({ renderer });
 
   return (
-    <div dangerouslySetInnerHTML={{__html: marked(props.text)}} />
+    <div className='previewer' dangerouslySetInnerHTML={{__html: marked(props.text)}} />
   );
 }
 

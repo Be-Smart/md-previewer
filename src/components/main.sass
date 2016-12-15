@@ -1,0 +1,15 @@
+@import '~breakpoint-sass/stylesheets/breakpoint'
+
+*,
+*::before,
+*::after
+  box-sizing: border-box
+
+body
+  color: #515151
+
+.container
+  +breakpoint(993px)
+    display: flex
+    width: 90%
+    margin: 0 auto

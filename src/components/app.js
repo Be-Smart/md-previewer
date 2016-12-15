@@ -5,6 +5,7 @@ import React from 'react';
 import Editor from './md_editor';
 import Previewer from './previewer';
 import md from './helpers/default_md';
+import './main.sass'
 
 export default class App extends React.Component {
   constructor (props) {
@@ -19,7 +20,7 @@ export default class App extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='container'>
         <Editor
           setTextValue={this.setTextValue.bind(this)}
           defaultValue={this.state.val}

@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import './editor.sass';
 
 const Editor = (props) => {
 
@@ -9,8 +10,8 @@ const Editor = (props) => {
   }
 
   return (
-    <div>
-      <textarea rows='10' cols='30'
+    <div className='editor'>
+      <textarea rows='25'
         onChange={onTextareaChange}
         defaultValue={props.defaultValue}>
       </textarea>
